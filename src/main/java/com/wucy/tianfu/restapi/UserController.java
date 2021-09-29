@@ -1,7 +1,8 @@
 package com.wucy.tianfu.restapi;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.wucy.tianfu.domain.User;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
 
@@ -13,8 +14,13 @@ import org.springframework.stereotype.Controller;
  * @author wucy
  * @since 2021-09-25
  */
-@Controller
+@RestController
 @RequestMapping("/user")
+@CrossOrigin
 public class UserController {
 
+    @GetMapping("/single")
+    public User single(){
+        return new User();
+    }
 }
