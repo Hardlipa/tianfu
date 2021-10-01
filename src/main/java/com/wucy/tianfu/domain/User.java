@@ -1,8 +1,11 @@
 package com.wucy.tianfu.domain;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -12,7 +15,7 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author wucy
- * @since 2021-09-25
+ * @since 2021-10-01
  */
 @TableName("tf_user")
 @ApiModel(value = "User对象", description = "")
@@ -20,6 +23,7 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     private String nickname;
@@ -29,6 +33,12 @@ public class User implements Serializable {
     private String profile;
 
     private String photoUrl;
+
+    private String username;
+
+    private String password;
+
+    private LocalDateTime lastUptime;
 
     public Integer getId() {
         return id;
@@ -65,6 +75,27 @@ public class User implements Serializable {
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
     }
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public LocalDateTime getLastUptime() {
+        return lastUptime;
+    }
+
+    public void setLastUptime(LocalDateTime lastUptime) {
+        this.lastUptime = lastUptime;
+    }
 
     @Override
     public String toString() {
@@ -74,6 +105,9 @@ public class User implements Serializable {
             ", birthday=" + birthday +
             ", profile=" + profile +
             ", photoUrl=" + photoUrl +
+            ", username=" + username +
+            ", password=" + password +
+            ", lastUptime=" + lastUptime +
         "}";
     }
 }

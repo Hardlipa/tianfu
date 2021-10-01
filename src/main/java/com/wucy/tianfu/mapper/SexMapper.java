@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author wucy
- * @since 2021-09-25
+ * @since 2021-10-01
  */
 public interface SexMapper extends BaseMapper<Sex> {
 

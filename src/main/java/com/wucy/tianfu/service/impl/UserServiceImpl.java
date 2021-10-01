@@ -12,9 +12,13 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author wucy
- * @since 2021-09-25
+ * @since 2021-10-01
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
+    @Override
+    public boolean checkUsername(String username) {
+        return false;
+    }
 }

@@ -1,5 +1,7 @@
 package com.wucy.tianfu.domain;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -12,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author wucy
- * @since 2021-09-25
+ * @since 2021-10-01
  */
 @TableName("tf_sex")
 @ApiModel(value = "Sex对象", description = "")
@@ -20,6 +22,7 @@ public class Sex implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     private LocalDateTime endTime;
