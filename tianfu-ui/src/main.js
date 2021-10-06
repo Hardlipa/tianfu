@@ -14,7 +14,6 @@ Vue.prototype.$api = api
 
 router.beforeEach((to,from,next)=>{
   if(to.meta.requireAuth&&!store.state.user.username){
-    console.log(1);
     next({
       path:'login',
       query:{redict: to.fullPath}
