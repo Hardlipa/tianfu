@@ -16,7 +16,6 @@
         <q-btn label="确定" type="submit" color="primary"/>
       </div>
     </q-form>
-    <a href="login.html"></a>
   </div>
 </template>
 
