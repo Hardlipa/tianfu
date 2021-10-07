@@ -19,13 +19,13 @@ public class DBquickGenerate {
                     builder.author("wucy") // 设置作者
                             .enableSwagger() // 开启 swagger 模式
 //                            .fileOverride()// 覆盖已生成文件
-                            .outputDir("D:\\projects\\tianfu\\src\\main\\java");
+                            .outputDir("D:\\ideaProjects\\tianfu\\src\\main\\java");
                 })
                 .packageConfig(builder -> {
                     builder.parent("com.wucy.tianfu") // 设置父包名
                             .entity("domain")
                             .controller("restapi")
-                            .pathInfo(Collections.singletonMap(OutputFile.mapperXml, "D:\\projects\\tianfu\\src\\main\\resources\\mapper")); // 设置mapperXml生成路径
+                            .pathInfo(Collections.singletonMap(OutputFile.mapperXml, "D:\\ideaProjects\\tianfu\\src\\main\\resources\\mapper")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
                     builder // 设置需要生成的表名

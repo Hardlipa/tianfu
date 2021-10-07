@@ -1,16 +1,32 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
+import index from '../components/index'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: 'default',
-    component:()=>import('../components/home'),
-    meta:{
+    redirect: '/index',
+    component: () => import('../components/home'),
+    meta: {
       requireAuth: true
-    }
+    },
+    children: [{
+      path: '/index',
+      name: 'index',
+      component: index,
+      meta: {
+        requireAuth: true
+      }
+    },{
+      path: '/todo',
+      name: 'todo',
+      component: () => import('../components/todo'),
+      meta: {
+        requireAuth: true
+      }
+    }]
   },
   {
     path: '/login',
@@ -22,7 +38,7 @@ const routes = [
   },
   {
     path: '/*',
-    component: ()=>import('../components/pages/Error404')
+    component: () => import('../components/pages/Error404')
   }
 ]
 

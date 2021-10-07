@@ -9,7 +9,7 @@
           icon="assignment_ind"
           @click="leftDrawer = !leftDrawer"
         />
-        <q-toolbar-title> 天府 </q-toolbar-title>
+        <q-toolbar-title>天府</q-toolbar-title>
         <q-btn flat round dense icon="apps" class="q-mr-xs" />
         <q-btn flat round dense icon="more_vert" />
       </q-toolbar>
@@ -22,14 +22,14 @@
         content-class="bg-grey-3"
       >
         <q-scroll-area class="fit">
-          <q-list>
+          <q-list >
             <template v-for="(menuItem, index) in menuList">
               <q-item
                 clickable
                 :key="index"
-                :active="menuItem.label === 'Outbox'"
+                :active="menuItem.label === 'sOutbox'"
                 v-ripple
-                to=""
+                :to="menuItem.to"
               >
                 <q-item-section avatar>
                   <q-icon :name="menuItem.icon" />
@@ -42,19 +42,24 @@
         </q-scroll-area>
       </q-drawer>
     </q-header>
+    <q-page-container>
+      <router-view></router-view>
+    </q-page-container>
   </q-layout>
 </template>
 <script>
 const menuList = [
   {
-    icon: "inbox",
-    label: "Inbox",
+    icon: "home",
+    label: "home",
     separator: true,
+    to:'/'
   },
   {
-    icon: "send",
-    label: "Outbox",
+    icon: "today",
+    label: "todo",
     separator: false,
+    to: '/todo'
   },
   {
     icon: "delete",
